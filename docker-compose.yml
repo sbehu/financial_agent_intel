@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  financial-agent-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: financial_agent_container
+    ports:
+      - "8501:8501"
+    env_file:
+      - .env
+    volumes:
+      # 🗃️ PERSISTENCE BRIDGE: Maps your local database files into the container
+      - ./chroma_data:/app/chroma_data
+      - ./source_documents:/app/source_documents
+    restart: always

@@ -1,0 +1,184 @@
+NEXUS FINANCIAL GROUP — ANNUAL REPORT 2023
+Form 10-K | Fiscal Year Ended December 31, 2023
+Ticker: NXFG | Exchange: NYSE
+
+═══════════════════════════════════════════════════════════════
+LETTER TO SHAREHOLDERS
+═══════════════════════════════════════════════════════════════
+
+Dear Fellow Shareholders,
+
+Fiscal year 2023 marked a transformational period for Nexus Financial Group.
+Despite a challenging macroeconomic environment characterised by elevated
+interest rates and global supply chain pressures, we delivered record revenue
+of $12.4 billion, representing 14% growth year-over-year.
+
+Our disciplined capital allocation strategy and investment in AI-driven
+analytics capabilities have positioned Nexus as the leading financial
+intelligence platform in North America.
+
+Marcus T. Harrington
+Chief Executive Officer
+
+═══════════════════════════════════════════════════════════════
+CONSOLIDATED FINANCIAL STATEMENTS
+═══════════════════════════════════════════════════════════════
+
+INCOME STATEMENT (USD millions)
+                                    FY2023      FY2022      FY2021
+─────────────────────────────────────────────────────────────────
+Total Revenue                      12,400      10,880       9,240
+  Financial Services Revenue         7,440       6,528       5,544
+  Technology & Analytics Revenue     3,472       2,939       2,494
+  Advisory Services Revenue          1,488       1,413       1,202
+
+Cost of Revenue                     7,192       6,440       5,636
+Gross Profit                        5,208       4,440       3,604
+  Gross Margin %                    42.0%       40.8%       39.0%
+
+Operating Expenses:
+  Sales & Marketing                   992         871         739
+  Research & Development              744         653         554
+  General & Administrative            620         544         462
+  Depreciation & Amortisation         310         272         231
+Total Operating Expenses            2,666       2,340       1,986
+
+Operating Income (EBIT)             2,542       2,100       1,618
+  Operating Margin %                20.5%       19.3%       17.5%
+
+EBITDA                              2,852       2,372       1,849
+  EBITDA Margin %                   23.0%       21.8%       20.0%
+
+Interest Expense                     (186)       (154)       (128)
+Other Income / (Expense)               42          38          29
+Pre-Tax Income                      2,398       1,984       1,519
+Income Tax Expense                    (576)       (476)       (365)
+Net Income                          1,822       1,508       1,154
+  Net Margin %                      14.7%       13.9%       12.5%
+
+Earnings Per Share (Diluted)        $9.11       $7.54       $5.77
+
+BALANCE SHEET (USD millions)                    Dec 2023    Dec 2022
+─────────────────────────────────────────────────────────────────────
+ASSETS
+Current Assets:
+  Cash & Cash Equivalents            3,100       2,640
+  Short-term Investments             1,240       1,060
+  Accounts Receivable (net)          1,860       1,632
+  Prepaid & Other Current              420         362
+Total Current Assets                 6,620       5,694
+
+Non-Current Assets:
+  Property, Plant & Equipment (net)  2,480       2,210
+  Intangible Assets & Goodwill       4,960       4,340
+  Long-term Investments              1,550       1,380
+  Other Non-Current Assets             744         620
+Total Non-Current Assets             9,734       8,550
+
+TOTAL ASSETS                        16,354      14,244
+
+LIABILITIES & EQUITY
+Current Liabilities:
+  Accounts Payable                     930         814
+  Accrued Liabilities                  744         651
+  Short-term Debt                      620         542
+  Deferred Revenue                     496         434
+Total Current Liabilities            2,790       2,441
+  Current Ratio                       2.37        2.33
+
+Non-Current Liabilities:
+  Long-term Debt                     3,720       3,256
+  Deferred Tax Liabilities             558         488
+  Other Non-Current Liabilities        372         326
+Total Non-Current Liabilities        4,650       4,070
+
+TOTAL LIABILITIES                    7,440       6,511
+  Debt-to-Equity Ratio               0.75x       0.73x
+
+Shareholders' Equity:
+  Common Stock & APIC                4,030       3,524
+  Retained Earnings                  5,240       4,572
+  Accumulated OCI                     (356)       (363)
+TOTAL EQUITY                         8,914       7,733
+
+TOTAL LIABILITIES & EQUITY          16,354      14,244
+
+CASH FLOW STATEMENT (USD millions)              FY2023      FY2022
+─────────────────────────────────────────────────────────────────
+Operating Activities:
+  Net Income                         1,822       1,508
+  D&A Add-back                         310         272
+  Working Capital Changes             (248)       (186)
+  Other Adjustments                    124         108
+Net Operating Cash Flow              2,008       1,702
+
+Investing Activities:
+  Capital Expenditures                (434)       (380)
+  Acquisitions (net of cash)          (620)       (542)
+  Investment Purchases (net)          (186)       (162)
+Net Investing Cash Flow             (1,240)     (1,084)
+
+Financing Activities:
+  Debt Issuance / (Repayment)          464         (62)
+  Share Repurchases                   (496)       (434)
+  Dividends Paid                      (276)       (242)
+Net Financing Cash Flow               (308)       (738)
+
+Net Change in Cash                     460         (120)
+Free Cash Flow                       1,574       1,322
+  FCF Margin %                       12.7%       12.2%
+
+═══════════════════════════════════════════════════════════════
+RISK FACTORS
+═══════════════════════════════════════════════════════════════
+
+1. INTEREST RATE RISK
+   Approximately 40% of our loan portfolio is tied to variable rates. A 200bps
+   increase in benchmark rates would reduce net interest income by an estimated
+   $186 million annually. We employ interest rate swaps covering $1.86 billion
+   of notional exposure as a partial hedge.
+
+2. CREDIT RISK & LOAN PORTFOLIO QUALITY
+   Non-performing loans represent 1.8% of the total portfolio (industry avg: 2.1%).
+   We maintain a credit loss allowance of $744 million (3.2x NPL coverage ratio).
+   Concentration in commercial real estate (28% of portfolio) warrants monitoring
+   given current market conditions.
+
+3. REGULATORY & COMPLIANCE RISK
+   Pending Basel IV implementation in 2025 may require additional Tier 1 capital
+   buffers of $620–$930 million. SEC proposed rules on cybersecurity disclosure and
+   AI model governance could increase compliance costs by $40–80 million annually.
+
+4. LIQUIDITY RISK
+   Our liquidity coverage ratio (LCR) stands at 142%, well above the 100% regulatory
+   minimum. Net stable funding ratio (NSFR) is 118%. However, rapid deposit outflows
+   in a stress scenario remain a tail risk we continuously monitor.
+
+5. OPERATIONAL & TECHNOLOGY RISK
+   Our increasing dependence on AI and machine learning models introduces model risk.
+   A significant model failure could impact $3.7 billion of algorithmically-managed
+   assets. We maintain comprehensive model validation and governance frameworks.
+
+6. CYBERSECURITY RISK
+   We experienced two significant cyber incidents in 2023, neither of which resulted
+   in material data loss. Annual cybersecurity spend is $248 million. A successful
+   breach could result in regulatory penalties, litigation, and reputational damage.
+
+7. GEOPOLITICAL & MACRO RISK
+   With 22% of revenue derived from international operations, adverse geopolitical
+   developments — particularly in EMEA — could reduce revenue by up to $496 million
+   in a severe scenario.
+
+═══════════════════════════════════════════════════════════════
+MANAGEMENT OUTLOOK
+═══════════════════════════════════════════════════════════════
+
+For FY2024, management guides for:
+  • Revenue growth of 10–13% ($13.6–14.0 billion)
+  • EBITDA margin expansion of 50–100bps (23.5–24.0%)
+  • EPS of $10.00–$10.50 (diluted)
+  • Capital expenditure of $450–500 million
+  • Share repurchase programme of up to $620 million
+
+The Board has approved a quarterly dividend of $0.38 per share
+($1.52 annualised), a 10% increase from FY2023.
