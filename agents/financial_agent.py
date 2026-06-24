@@ -5,6 +5,9 @@ import re
 from openai import OpenAI
 from dotenv import load_dotenv
 
+from utils.logger import setup_custom_logger
+logger = setup_custom_logger("FinancialAgent")
+
 # 🤫 SILENCE THIRD-PARTY TELEMETRY WARNINGS
 logging.getLogger("chromadb.telemetry.product.posthog").setLevel(logging.CRITICAL)
 logging.getLogger("chromadb").setLevel(logging.CRITICAL)
@@ -21,7 +24,7 @@ class FinancialAgent:
         self.openai_client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
         self.conversation_history = []
         
-        # 📊 TICKER MAPPING LAYER: Connects natural language phrases to active stock symbols
+        # 📊 SINGLE SOURCE OF TRUTH TICKER MAPPING
         self.ticker_map = {
             "axis": "AXISBANK.NS",
             "icici": "ICICIBANK.NS",
@@ -42,146 +45,98 @@ class FinancialAgent:
                 formatted_messages.append({"role": "assistant", "content": turn['text']})
         return formatted_messages
 
-    def execute_web_search(self, company_keyword):
+    def execute_web_search(self, bank_keyword):
         """
-        🌐 REAL-TIME FINANCIAL DATA TOOL (yfinance Engine with ISO Date Normalizer):
-        Pulls live audited income statements and maps fiscal dates to standard calendar years.
+        Fetches live financial metrics using a robust, header-authenticated yfinance session.
         """
-        ticker_symbol = self.ticker_map.get(company_keyword.lower())
-        if not ticker_symbol:
-            return f"Market Data Error: Could not resolve a public stock ticker for '{company_keyword}'."
+        import yfinance as yf
+        import requests
+        
+        ticker_symbol = self.ticker_map.get(bank_keyword.lower(), bank_keyword.upper())
+        logger.info(f"📡 Querying yfinance for official symbol: {ticker_symbol}")
         
         try:
-            import yfinance as yf
-            ticker_obj = yf.Ticker(ticker_symbol)
+            session = requests.Session()
+            session.headers.update({
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            })
             
-            # Use the absolute most resilient income statement endpoints available
-            income_statement = ticker_obj.income_stmt
-            if income_statement.empty:
-                income_statement = ticker_obj.financials
-            if income_statement.empty:
-                income_statement = ticker_obj.quarterly_income_stmt
-                
-            if income_statement.empty:
-                return f"No live income statement matrix found for ticker symbol {ticker_symbol}."
+            ticker_obj = yf.Ticker(ticker_symbol, session=session)
+            income_statement = None
             
-            # 🚀 FIX: Map full ISO datetime index names (e.g., '2024-03-31 00:00:00') into clean calendar years
-            available_years = []
-            for col in income_statement.columns:
-                col_str = str(col)
-                # Regex extraction to pull the first 4 consecutive digits (the year) safely
-                year_match = re.search(r'\b(202\d)\b', col_str)
-                if year_match:
-                    available_years.append(year_match.group(1))
-                else:
-                    available_years.append(col_str.split("-")[0].strip())
-            
-            financial_snippet = f"--- LIVE MARKET DATA FOR TICKER: {ticker_symbol} ---\n"
-            relevant_rows = [
-                "Total Revenue", 
-                "Net Income", 
-                "Net Interest Income", 
-                "Interest Income", 
-                "Interest Expense",
-                "Operating Revenue"
-            ]
-            
-            # Cross-reference the financial indexes matching our target matrices
-            for row in income_statement.index:
-                if any(target.lower() in str(row).lower() for target in relevant_rows):
-                    values = income_statement.loc[row].values
-                    val_strings = []
-                    for year, val in zip(available_years, values):
-                        # Catch empty rows or non-numeric values safely
-                        try:
-                            val_strings.append(f"{year}: {val:,.0f}")
-                        except (ValueError, TypeError):
-                            continue
-                    if val_strings:
-                        financial_snippet += f"{row} -> {', '.join(val_strings)}\n"
-                    
-            return financial_snippet
-            
-        except Exception as e:
-            return f"Financial API Stream Error for {ticker_symbol}: {str(e)}"
-        
-    def chat(self, user_message):
-        self.conversation_history.append({'speaker': 'user', 'text': user_message})
-        lower_message = user_message.lower()
-        
-        # 🏢 1. DETERMINE LOCAL VS. HYBRID INTENT (ROUTER LAYER)
-        needs_local_amex = False
-        needs_web_search = False
-        target_peer_keyword = ""
-        
-        if "amex" in lower_message or "american express" in lower_message or "revenue" in lower_message or "provision" in lower_message:
-            needs_local_amex = True
-            
-        peer_keywords = ["axis", "icici", "hdfc", "visa", "mastercard", "sbi"]
-        for peer in peer_keywords:
-            if peer in lower_message:
-                needs_web_search = True
-                target_peer_keyword = peer
-                break
-
-        # 📁 2. EXECUTE ROUTED SEARCH CHANNELS
-        local_context = ""
-        web_context = ""
-        
-        # Pass A: Query local Vector Database with wide window size
-        if needs_local_amex:
             try:
-                docs, metas = query_vector_db(user_message, n_results=10, metadata_filter={"company": "Amex"})
-                if docs:
-                    local_context = format_context([docs, metas])
+                income_statement = ticker_obj.get_income_stmt()
             except Exception:
                 pass
                 
-        # Pass B: Trigger Live Financial API execution for the active peer asset
-        if needs_web_search and target_peer_keyword:
-            web_context = self.execute_web_search(target_peer_keyword)
+            if income_statement is None or income_statement.empty:
+                income_statement = ticker_obj.income_stmt
+            if income_statement is None or income_statement.empty:
+                income_statement = ticker_obj.financials
 
-        # 🗃️ 3. CONSOLIDATE CONTEXTS SECURELY
-        context_block = f"=== AUTHORITATIVE LOCAL INTERNAL DATA ===\n{local_context}\n\n"
-        if web_context:
-            context_block += f"=== EXTERNAL REFERENCE WEB DATA ===\n{web_context}"
+            if income_statement is None or income_statement.empty:
+                return f"[Live Web Search Error: No active data frame found for {ticker_symbol}]"
+                
+            return f"\n--- LIVE WEB MARKET DATA FOR {ticker_symbol} ---\n{income_statement.to_string()}\n"
+            
+        except Exception as e:
+            return f"[Live Web Search Exception for {ticker_symbol}: {str(e)}]"
+
+    def process_query(self, user_query):
+        """
+        Processes multi-asset requests by creating a hybrid contextual layout 
+        blending local RAG matrices and real-time scrapers seamlessly.
+        """
+        logger.info(f"🚀 Processing query: {user_query}")
         
-        context_block = context_block.strip()
+        # Step 1: Gather local vectorized contexts safely
+        local_rag_context = ""
+        try:
+            local_documents, local_metadatas = query_vector_db(user_query, n_results=6)
+            
+            if local_documents and len(local_documents) > 0 and local_documents[0] is not None:
+                local_rag_context = format_context((local_documents, local_metadatas))
+            else:
+                logger.warning("⚠️ ChromaDB query returned zero matching documents. Falling back to empty local context.")
+                local_rag_context = "No relevant internal company PDF document snippets were found for this request."
+        except Exception as db_err:
+            logger.error(f"❌ Error querying or formatting local Vector DB: {str(db_err)}")
+            local_rag_context = "An internal error occurred while fetching company document context."
+
+        # Step 2: Scan for live market keywords dynamically
+        web_contexts = []
+        for keyword in self.ticker_map.keys():
+            if re.search(r'\b' + re.escape(keyword) + r'\b', user_query.lower()):
+                logger.info(f"🎯 Router triggered live web scraper tracking channel: {keyword}")
+                web_data = self.execute_web_search(keyword)
+                web_contexts.append(web_data)
         
-        # 📝 4. CONSTRUCT PROMPT & INJECT HYBRID INSTRUCTIONS
-        system_instruction, user_payload = build_prompt(user_message, context_block)
+        # Step 3: Unify discovered data channels into a single cohesive payload
+        combined_web_context = "\n".join(web_contexts) if web_contexts else "No supplementary live market data requested."
         
-        hybrid_rules = (
-            "\n\nDATA SOURCE AUTHORITY MATRIX:\n"
-            "1. Treat 'AUTHORITATIVE LOCAL INTERNAL DATA' as the absolute ground truth for American Express financials.\n"
-            "2. Use 'EXTERNAL REFERENCE WEB DATA' exclusively to extract metrics for requested peer companies.\n"
-            "   👉 NOTE ON VALUATION UNITS: Local Amex files report in Millions of USD. External tickers from Yahoo Finance (like .NS symbols) "
-            "   report raw financial table entries directly in their native local currency units (e.g., INR for Indian markets). "
-            "   When displaying or graphing comparisons, cleanly state the currencies being evaluated so values match contextually.\n\n"
-            "CRITICAL VISUALIZATION RULE:\n"
-            "If the question evaluates or compares metrics across multiple years or companies, append a raw comma-separated dataset "
-            "block at the very end of your response on a brand new line starting strictly with 'DATA_SERIES:' followed by pairs of Year_Company=Value.\n"
+        master_context = (
+            f"=== LOCAL KNOWLEDGE POOL DATA ===\n{local_rag_context}\n\n"
+            f"=== REAL-TIME EXTERNAL WEB DATA ===\n{combined_web_context}"
         )
-        system_instruction += hybrid_rules
         
-        past_memory_tickets = self.format_chat_history()
-        api_messages = [{"role": "system", "content": system_instruction}] + past_memory_tickets
-        api_messages[-1] = {"role": "user", "content": user_payload}
+        # Step 4: System synthesis via GPT-4o-mini
+        system_prompt, user_payload = build_prompt(user_query, master_context)
+        messages = [{"role": "system", "content": system_prompt}]
+        messages.extend(self.format_chat_history())
+        messages.append({"role": "user", "content": user_payload})
         
         try:
             response = self.openai_client.chat.completions.create(
                 model="gpt-4o-mini",
-                messages=api_messages,
+                messages=messages,
                 temperature=0.0
             )
-            ai_response = response.choices[0].message.content
+            answer = response.choices[0].message.content
             
-            # Formatting cleanups for display handling
-            ai_response = re.sub(r'\\\[\s*(.*?)\s*\\\]', r'$$\1$$', ai_response, flags=re.DOTALL)
-            ai_response = re.sub(r'\\\[\s*(.*?)\s*\]', r'$$\1$$', ai_response, flags=re.DOTALL)
-            ai_response = re.sub(r'\\\(\s*(.*?)\s*\\\)', r'$\1$', ai_response, flags=re.DOTALL)
+            self.conversation_history.append({"speaker": "user", "text": user_query})
+            self.conversation_history.append({"speaker": "assistant", "text": answer})
             
-            self.conversation_history.append({'speaker': 'assistant', 'text': ai_response})
-            return ai_response
+            return answer
         except Exception as e:
-            return f"An operational error occurred: {str(e)}"
+            logger.error(f"❌ Synthesis Pipeline Generation Failure: {str(e)}")
+            return f"An operational error occurred during data compilation: {str(e)}"

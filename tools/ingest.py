@@ -17,7 +17,8 @@ load_dotenv(dotenv_path=ENV_PATH)
 
 # 3. Instantiate structural connections
 openai_client = OpenAI()
-CHROMA_PATH = os.path.join(BASE_DIR, "chroma_storage")
+# Extract the directory path dynamically from environment configuration
+CHROMA_PATH = os.getenv("CHROMA_PERSIST_DIR", os.path.join(BASE_DIR, "chroma_storage"))
 chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
 collection = chroma_client.get_or_create_collection("financial_analysis_pool")
 

@@ -1,7 +1,8 @@
 import streamlit as st
 import re
 import pandas as pd
-from agents.financial_agent import FinancialAgent
+import traceback
+from tasks import process_document_pipeline  # 🏎️ Import our background task wrapper
 
 # --- Page Configuration Layout ---
 st.set_page_config(
@@ -11,13 +12,8 @@ st.set_page_config(
 )
 
 # Initialize Session State Managers
-if "financial_agent" not in st.session_state:
-    st.session_state.financial_agent = FinancialAgent()
-
 if "ui_chat_history" not in st.session_state:
     st.session_state.ui_chat_history = []
-
-agent = st.session_state.financial_agent
 
 def execute_formula_toolkit(toolkit_string):
     """
@@ -25,7 +21,6 @@ def execute_formula_toolkit(toolkit_string):
     Intercepts computation demands and processes pure python floating-point arithmetic.
     """
     try:
-        # Expected token format: "TYPE=CAGR, VALUES=[36087, 43556, ...]"
         type_match = re.search(r"TYPE=([^,]+)", toolkit_string)
         vals_match = re.search(r"VALUES=\[(.+)\]", toolkit_string)
         
@@ -54,13 +49,17 @@ def execute_formula_toolkit(toolkit_string):
 def render_response_and_charts(content_text):
     """
     Splits out data series tokens and structurally draws the markdown chat responses
-    alongside beautiful interactive data visualization panels.
+    alongside beautiful interactive data visualization panels with production-grade guardrails.
     """
-    clean_text = content_text
+    if content_text is None:
+        st.error("Received empty response payload from analysis engine.")
+        return
+
+    # Ensure we are handling a clean string
+    clean_text = str(content_text)
     data_series_string = None
     toolkit_string = None
     
-    # Extract structural lines out of the text display before printing to user
     lines = clean_text.split("\n")
     filtered_lines = []
     for line in lines:
@@ -74,22 +73,24 @@ def render_response_and_charts(content_text):
     clean_text = "\n".join(filtered_lines).strip()
     st.markdown(clean_text)
     
-    # 🛠️ Execute native tool computations if flagged
     if toolkit_string:
         execute_formula_toolkit(toolkit_string)
         
-    # 📊 Draw interactive chart dashboards if series markers exist
     if data_series_string:
         try:
             pairs = data_series_string.split(",")
             chart_data = []
             for pair in pairs:
-                if "=" in pair:
-                    year, val = pair.split("=")
-                    chart_data.append({
-                        "Fiscal Year": str(year.strip()),
-                        "Value (Millions USD)": float(val.strip())
-                    })
+                # 🛡️ DEFENSIVE GUARDRAIL: Ensure it's a valid data pair, avoiding header decorations
+                if pair and "=" in pair and not pair.startswith("==="):
+                    parts = pair.split("=")
+                    if len(parts) == 2:  # Must cleanly split into exactly key and value
+                        year, val = parts[0].strip(), parts[1].strip()
+                        if year and val:
+                            chart_data.append({
+                                "Fiscal Year": str(year),
+                                "Value (Millions USD)": float(val)
+                            })
             if chart_data:
                 df = pd.DataFrame(chart_data)
                 df.set_index("Fiscal Year", inplace=True)
@@ -99,7 +100,8 @@ def render_response_and_charts(content_text):
                         st.bar_chart(df)
                     with col2:
                         st.line_chart(df)
-        except Exception:
+        except Exception as chart_err:
+            # Silence chart rendering glitches so the core financial text response is never blocked
             pass
 
 # --- Sidebar Controls Layout ---
@@ -107,7 +109,6 @@ with st.sidebar:
     st.header("⚙️ Controls")
     if st.button("🔄 Clear Chat History", type="secondary"):
         st.session_state.ui_chat_history = []
-        agent.conversation_history = []
         st.rerun()
 
 # --- Main Screen Conversation Timeline ---
@@ -131,11 +132,29 @@ if user_query := st.chat_input("Ask the agent a financial question:"):
     with st.chat_message("assistant"):
         with st.spinner("Analyzing multi-document context and computing values..."):
             try:
-                # Dispatches directly to the robust Agent wrapper framework
-                response = agent.chat(user_query)
-                render_response_and_charts(response)
-                st.session_state.ui_chat_history.append({"role": "assistant", "content": response})
+                # 🚀 Dispatch task execution array out to our Redis message frame
+                task_handle = process_document_pipeline.delay(user_query)
+                
+                # 🔄 Poll Redis safely without locking CPU execution
+                while not task_handle.ready():
+                    import time
+                    time.sleep(0.4)
+                
+                # 🎁 Extract payload output block from the task
+                response = task_handle.result
+                
+                if response is None:
+                    error_msg = "An execution error occurred: The processing engine returned a null state response."
+                    st.error(error_msg)
+                    st.session_state.ui_chat_history.append({"role": "assistant", "content": error_msg})
+                else:
+                    clean_response = str(response)
+                    render_response_and_charts(clean_response)
+                    st.session_state.ui_chat_history.append({"role": "assistant", "content": clean_response})
+                    
             except Exception as e:
-                error_msg = f"An execution error occurred: {str(e)}"
-                st.error(error_msg)
-                st.session_state.ui_chat_history.append({"role": "assistant", "content": error_msg})
+                # 🛡️ DEFENSIVE DEBUG PANEL
+                error_trace = traceback.format_exc()
+                st.error("⚠️ **AI Financial Agent Pipeline Exception Encountered**")
+                st.code(error_trace, language="text")
+                st.session_state.ui_chat_history.append({"role": "assistant", "content": f"Pipeline execution fault."})

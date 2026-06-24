@@ -1,17 +1,49 @@
 version: '3.8'
 
 services:
-  financial-agent-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: financial_agent_container
+  redis_broker:
+    image: redis:7-alpine
+    container_name: redis_broker
+    ports:
+      - "6379:6379"
+    restart: always
+
+  streamlit_ui:
+    build: .
+    container_name: streamlit_ui
     ports:
       - "8501:8501"
+    volumes:
+      - .:/app
     env_file:
       - .env
-    volumes:
-      # 🗃️ PERSISTENCE BRIDGE: Maps your local database files into the container
-      - ./chroma_data:/app/chroma_data
-      - ./source_documents:/app/source_documents
+    environment:
+      - CELERY_BROKER_URL=redis://redis_broker:6379/0
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    depends_on:
+      - redis_broker
     restart: always
+
+  celery_worker:
+    build: .
+    container_name: celery_worker
+    volumes:
+      - .:/app
+      - chroma_data:/app/chroma_storage
+    env_file:
+      - .env
+    environment:
+      - CELERY_BROKER_URL=redis://redis_broker:6379/0
+      - CHROMA_PERSIST_DIR=/app/chroma_storage
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+    depends_on:
+      - redis_broker
+    restart: always
+
+volumes:
+  chroma_data:
+    driver: local
