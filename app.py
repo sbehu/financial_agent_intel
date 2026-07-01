@@ -2,7 +2,8 @@ import streamlit as st
 import re
 import pandas as pd
 import traceback
-from tasks import process_document_pipeline  # 🏎️ Import our background task wrapper
+# 🌟 THE SYNC FIX: Import our newly upgraded thread-safe waiter adapter
+from app_crew_adapter import run_crew_with_stream  
 
 # --- Page Configuration Layout ---
 st.set_page_config(
@@ -49,13 +50,12 @@ def execute_formula_toolkit(toolkit_string):
 def render_response_and_charts(content_text):
     """
     Splits out data series tokens and structurally draws the markdown chat responses
-    alongside beautiful interactive data visualization panels with production-grade guardrails.
+    alongside beautiful interactive data visualization panels.
     """
     if content_text is None:
         st.error("Received empty response payload from analysis engine.")
         return
 
-    # Ensure we are handling a clean string
     clean_text = str(content_text)
     data_series_string = None
     toolkit_string = None
@@ -81,10 +81,9 @@ def render_response_and_charts(content_text):
             pairs = data_series_string.split(",")
             chart_data = []
             for pair in pairs:
-                # 🛡️ DEFENSIVE GUARDRAIL: Ensure it's a valid data pair, avoiding header decorations
                 if pair and "=" in pair and not pair.startswith("==="):
                     parts = pair.split("=")
-                    if len(parts) == 2:  # Must cleanly split into exactly key and value
+                    if len(parts) == 2:
                         year, val = parts[0].strip(), parts[1].strip()
                         if year and val:
                             chart_data.append({
@@ -101,7 +100,6 @@ def render_response_and_charts(content_text):
                     with col2:
                         st.line_chart(df)
         except Exception as chart_err:
-            # Silence chart rendering glitches so the core financial text response is never blocked
             pass
 
 # --- Sidebar Controls Layout ---
@@ -130,21 +128,19 @@ if user_query := st.chat_input("Ask the agent a financial question:"):
     st.session_state.ui_chat_history.append({"role": "user", "content": user_query})
     
     with st.chat_message("assistant"):
-        with st.spinner("Analyzing multi-document context and computing values..."):
+        # Create expandable panel where the user's isolated private clipboard stream will output live
+        with st.status("🕵️‍♂️ Agent Intelligence Team Active (Inspecting Thought Streams)...", expanded=True) as status:
+            log_container = st.empty()
             try:
-                # 🚀 Dispatch task execution array out to our Redis message frame
-                task_handle = process_document_pipeline.delay(user_query)
+                # 🏃‍♂️ Fire the query directly to our thread-isolated waiter adapter
+                response, live_logs = run_crew_with_stream(user_query)
                 
-                # 🔄 Poll Redis safely without locking CPU execution
-                while not task_handle.ready():
-                    import time
-                    time.sleep(0.4)
-                
-                # 🎁 Extract payload output block from the task
-                response = task_handle.result
+                # Render the final captured thought log block safely into the UI dropdown panel
+                log_container.code(live_logs if live_logs else "Executing retrieval paths...", language="text")
+                status.update(label="✅ Analysis Concluded Successfully!", state="complete", expanded=False)
                 
                 if response is None:
-                    error_msg = "An execution error occurred: The processing engine returned a null state response."
+                    error_msg = "The analysis engine returned an empty data state response."
                     st.error(error_msg)
                     st.session_state.ui_chat_history.append({"role": "assistant", "content": error_msg})
                 else:
@@ -153,7 +149,7 @@ if user_query := st.chat_input("Ask the agent a financial question:"):
                     st.session_state.ui_chat_history.append({"role": "assistant", "content": clean_response})
                     
             except Exception as e:
-                # 🛡️ DEFENSIVE DEBUG PANEL
+                status.update(label="⚠️ Pipeline Fault Detected", state="error", expanded=True)
                 error_trace = traceback.format_exc()
                 st.error("⚠️ **AI Financial Agent Pipeline Exception Encountered**")
                 st.code(error_trace, language="text")

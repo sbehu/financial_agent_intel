@@ -1,4 +1,5 @@
+# Sensitive configuration environments
 .env
 __pycache__/
-chroma_data/
-chroma_storage/
+# Large local binary database files
+chroma_db_storage/

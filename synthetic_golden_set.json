@@ -1,0 +1,1202 @@
+[
+    {
+        "question": "What is the total number of Card Member Loans and Card Member Receivables combined?",
+        "ground_truth": "87",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 122
+    },
+    {
+        "question": "What is the reported scale value on page 159 of the document?",
+        "ground_truth": "11,283",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 159
+    },
+    {
+        "question": "What is the total number of items listed in the MARKET FOR REGISTRANT\u2019S COMMON EQUITY, RELATED STOCKHOLDER section?",
+        "ground_truth": "5",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 50
+    },
+    {
+        "question": "What is the total number of compliance reports filed in the year 2025 as indicated in the structural table?",
+        "ground_truth": "The document does not contain a structural table with relevant data.",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 51
+    },
+    {
+        "question": "What is the average percentage of U.S. Government treasury obligations across the reported periods?",
+        "ground_truth": "3.33",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 180
+    },
+    {
+        "question": "What is the total value for the Global Consumer Services Group and Global Commercial Services combined in the second column?",
+        "ground_truth": "$ 175",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 117
+    },
+    {
+        "question": "What is the total sum of the values presented in the table?",
+        "ground_truth": "53,645",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 178
+    },
+    {
+        "question": "What was the percentage increase in Service fees and other revenue compared to the previous year?",
+        "ground_truth": "28 percent",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 69
+    },
+    {
+        "question": "What is the total reported value for the Consumer and Small Business segments combined?",
+        "ground_truth": "$ 111",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 128
+    },
+    {
+        "question": "What is the total number of amendments referenced in the document for the American Express Company Salary/Bonus Deferral Plan?",
+        "ground_truth": "3",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 178
+    },
+    {
+        "question": "What was the primary driver for the increase in total revenues in 2021 compared to 2020?",
+        "ground_truth": "Higher Discount revenue and increased Net interest income.",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 69
+    },
+    {
+        "question": "How many times does the Board receive updates on cybersecurity in a year?",
+        "ground_truth": "At least once a year.",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 48
+    },
+    {
+        "question": "What is the total number of reported compliance issues in the year 2021 as per the compliance reports?",
+        "ground_truth": "The document does not provide specific numerical data regarding compliance issues for the year 2021.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 94
+    },
+    {
+        "question": "What is the average merchant discount rate reported in the compliance document?",
+        "ground_truth": "The text chunk does not provide a specific numeric value for the average merchant discount rate.",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 34
+    },
+    {
+        "question": "What was the total amount of restricted cash and cash equivalents held by the Lending Trust and Charge Trust as of December 31, 2021?",
+        "ground_truth": "$43 million",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 125
+    },
+    {
+        "question": "What is the value of retained earnings reported in the document?",
+        "ground_truth": "113,474",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 103
+    },
+    {
+        "question": "What is the reported scale of the data in the document?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 10
+    },
+    {
+        "question": "What is the percentage change in the value of savings and transaction accounts from the first to the second column?",
+        "ground_truth": "3.9%",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 76
+    },
+    {
+        "question": "What is the total number of contractual obligations reported in the section marked with [START_STRUCTURAL_TABLE]?",
+        "ground_truth": "The document does not contain a section marked with [START_STRUCTURAL_TABLE], therefore no contractual obligations can be quantified.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 94
+    },
+    {
+        "question": "What is the total value of Debt securities across all reported periods?",
+        "ground_truth": "3,100",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 152
+    },
+    {
+        "question": "What is the total amount reported for U.S. and Non-U.S. combined?",
+        "ground_truth": "12,672",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 175
+    },
+    {
+        "question": "What is the difference between the two reported values in the table?",
+        "ground_truth": "$ 1,134",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 150
+    },
+    {
+        "question": "What was the total amount of new senior notes issued by American Express Company in the exchange offer on November 30, 2021?",
+        "ground_truth": "$1.7 billion",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 72
+    },
+    {
+        "question": "What is the age difference between Stephen J. Squeri and Anr\u00e9 Williams?",
+        "ground_truth": "6",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 17
+    },
+    {
+        "question": "What is the difference in total assets between the first and second columns of the table?",
+        "ground_truth": "1,000",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 145
+    },
+    {
+        "question": "What is the difference in balance between January 1 for the second and third segments?",
+        "ground_truth": "$ 821 - $ 701 = $ 120",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 157
+    },
+    {
+        "question": "What is the total revenue reported for the U.S. segment?",
+        "ground_truth": "114.7",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 64
+    },
+    {
+        "question": "What is the difference in net interest income between the first and second reported values?",
+        "ground_truth": "$635",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 62
+    },
+    {
+        "question": "What is the total annual maturity on long-term debt for the American Express Company (Parent Company only) in 2025?",
+        "ground_truth": "$5,250 million",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 144
+    },
+    {
+        "question": "What is the target range for American Express' Common Equity Tier 1 (CET1) risk-based capital ratio?",
+        "ground_truth": "10 to 11 percent",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 69
+    },
+    {
+        "question": "What is the total number of risk factors mentioned in the compliance report?",
+        "ground_truth": "15",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 98
+    },
+    {
+        "question": "What is the total number of proprietary corporate and small business cards issued by Global Commercial Services (GCS)?",
+        "ground_truth": "The document does not provide a specific numeric value for the total number of proprietary corporate and small business cards issued by GCS.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 158
+    },
+    {
+        "question": "What is the reported scale of the values in the document?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 13
+    },
+    {
+        "question": "What is the page number where the Management\u2019s Discussion and Analysis of Financial Condition and Results of Operations (MD&A) section begins?",
+        "ground_truth": "42",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 17
+    },
+    {
+        "question": "What was the total comprehensive income reported for the year 2020 compared to 2019?",
+        "ground_truth": "The total comprehensive income for 2020 was reported as 96 million, while for 2019 it was not specified in the provided text.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 106
+    },
+    {
+        "question": "What is the reported scale of the financial metrics in the document?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 104
+    },
+    {
+        "question": "What is the total number of compliance reports filed in 2020 as indicated in the table?",
+        "ground_truth": "5",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 27
+    },
+    {
+        "question": "What is the reported scale of the compliance metrics in the document?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 36
+    },
+    {
+        "question": "What is the difference in the dollar values between the two segments reported in the table?",
+        "ground_truth": "3.14",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 133
+    },
+    {
+        "question": "What is the total number of Card Member Loans and Card Member Receivables combined?",
+        "ground_truth": "87",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 118
+    },
+    {
+        "question": "What is the total expense reported for Card Member Services and Marketing combined?",
+        "ground_truth": "The document does not provide specific numeric values for Card Member Services and Marketing expenses.",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 117
+    },
+    {
+        "question": "What is the estimated number of merchant locations in force (LIF) that accept American Express in China as of December 2025?",
+        "ground_truth": "37 million",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 14
+    },
+    {
+        "question": "What is the minimum rating required for AENB to maintain its financial holding company status under the Community Reinvestment Act?",
+        "ground_truth": "Satisfactory",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 21
+    },
+    {
+        "question": "How many historic restaurants are being supported through the program with the National Trust for Historic Preservation?",
+        "ground_truth": "25",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 5
+    },
+    {
+        "question": "What is the total value of Cash and cash equivalents across all reported periods?",
+        "ground_truth": "$66",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 144
+    },
+    {
+        "question": "What is the total market capitalization of the registrant based on the reported closing sale price?",
+        "ground_truth": "$104.0 billion",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 7
+    },
+    {
+        "question": "What is the impact of regulation on discount revenue as mentioned in the document?",
+        "ground_truth": "Regulation of bankcard fees has negatively impacted the discount revenue earned, including downward pressure on the discount rate from decreases in competitor pricing due to caps on interchange fees.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 27
+    },
+    {
+        "question": "What is the total value of fixed-rate long-term debt reported in the table?",
+        "ground_truth": "3385",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 141
+    },
+    {
+        "question": "What is the total number of directors listed in the document?",
+        "ground_truth": "10",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 186
+    },
+    {
+        "question": "What was the total tax impact for the year 2023?",
+        "ground_truth": "-145",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 163
+    },
+    {
+        "question": "What is the total number of risk categories defined in the ERM policy?",
+        "ground_truth": "At least 7 risk categories are mentioned: credit risk, operational risk, compliance risk, legal risk, conduct risk, third-party risk, information technology risk, information security risk, data management risk, privacy risk, and people risk.",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 81
+    },
+    {
+        "question": "What is the difference in total expenses between the first and second reported periods?",
+        "ground_truth": "669",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 76
+    },
+    {
+        "question": "What is the percentage increase in the average assets attributable to non-U.S. activities from the first to the third reported period?",
+        "ground_truth": "2.2%",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 183
+    },
+    {
+        "question": "What is the total aggregated outstanding balance upon default for Card Member Loans and Card Member Receivables combined?",
+        "ground_truth": "$ 132 million",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 120
+    },
+    {
+        "question": "What is the total of the first row in the table?",
+        "ground_truth": "1,586",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 66
+    },
+    {
+        "question": "What is the percentage increase in Total segment assets from the year with the lowest value to the year with the highest value?",
+        "ground_truth": "24.5%",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 67
+    },
+    {
+        "question": "What is the difference in percentage between the first and third values in the table?",
+        "ground_truth": "0.27%",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 130
+    },
+    {
+        "question": "What is the percentage difference between the first and second percentage values in the table?",
+        "ground_truth": "0.03%",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 129
+    },
+    {
+        "question": "What is the difference in Gross deferred tax assets between the two reported values?",
+        "ground_truth": "$ 1,918",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 156
+    },
+    {
+        "question": "What is the total amount of accounts classified as TDRs as of December 31, 2022, including both over 90 days past due and non-accruals?",
+        "ground_truth": "$65 million",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 130
+    },
+    {
+        "question": "What is the adverse impact on pretax income of a hypothetical 10 percent strengthening of the U.S. dollar, net of hedges, as of December 31, 2025?",
+        "ground_truth": "$200 million",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 94
+    },
+    {
+        "question": "What is the value associated with Fixed Rate Subordinated Notes in the year 2024?",
+        "ground_truth": "5599",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 130
+    },
+    {
+        "question": "What is the reported capital ratio for American Express Company under the Basel III capital definitions?",
+        "ground_truth": "The document does not provide a specific numeric value for the capital ratio.",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 78
+    },
+    {
+        "question": "What is the total number of regulatory inquiries reported in the compliance section of the document?",
+        "ground_truth": "0",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 41
+    },
+    {
+        "question": "What is the estimated credit loss amount calculated from the macroeconomic scenario with the highest unemployment rate?",
+        "ground_truth": "The document does not provide specific numeric values for estimated credit losses or unemployment rates.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 90
+    },
+    {
+        "question": "What are the values reported for 2020 and 2019 in the first column of the table?",
+        "ground_truth": "6 for 2020 and 7 for 2019.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 60
+    },
+    {
+        "question": "What is the total value reported for 'Equity securities' in the table?",
+        "ground_truth": "779",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 123
+    },
+    {
+        "question": "What was the total amount of aid provided by American Express for humanitarian relief efforts in 2021?",
+        "ground_truth": "$1 million",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 5
+    },
+    {
+        "question": "What is the total sum of the values in the Provisions(b) row?",
+        "ground_truth": "4,760",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 121
+    },
+    {
+        "question": "What is the reported scale of the financial metrics in the document?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 70
+    },
+    {
+        "question": "What is the reported scale value on page 132 of the Amex_2021.pdf document?",
+        "ground_truth": "1,367",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 132
+    },
+    {
+        "question": "What is the reported scale of the document in terms of units?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 43
+    },
+    {
+        "question": "What is the total number of ESG initiatives reported in the document?",
+        "ground_truth": "The document does not specify a numeric value for the total number of ESG initiatives.",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 36
+    },
+    {
+        "question": "What is the difference in net interest income between the first and third reported values?",
+        "ground_truth": "5,384",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 60
+    },
+    {
+        "question": "What is the difference between the first and second values in the table?",
+        "ground_truth": "8,519",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 104
+    },
+    {
+        "question": "What is the estimated useful life range for equipment and furniture as stated in the document?",
+        "ground_truth": "3 to 10 years",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 109
+    },
+    {
+        "question": "What is the minimum requirement for the Tier 1 risk-based capital ratio compared to the CET1 risk-based capital ratio?",
+        "ground_truth": "1.5 percent higher than the minimum for the CET1 risk-based capital ratio.",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 72
+    },
+    {
+        "question": "What is the difference in net income between the second and third reported values?",
+        "ground_truth": "$ 1,755",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 172
+    },
+    {
+        "question": "What was the increase in the unfunded status of the defined benefit pension plans and other postretirement benefit plans from December 31, 2024 to December 31, 2025?",
+        "ground_truth": "$129 million",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 145
+    },
+    {
+        "question": "What is the total amount of fixed-rate long-term debt and derivatives designated as hedging instruments combined?",
+        "ground_truth": "$ 1",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 151
+    },
+    {
+        "question": "What is the total amount reported for Small Business loans?",
+        "ground_truth": "$ 34,074",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 187
+    },
+    {
+        "question": "What is the expected duration of contracts that do not require disclosure of future revenue recognition?",
+        "ground_truth": "One year or less",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 111
+    },
+    {
+        "question": "What is the difference in Total revenues net of interest expense between the first and second reported periods?",
+        "ground_truth": "7,653",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 53
+    },
+    {
+        "question": "What is the difference in net write-offs for principal less recoveries between the two reported values?",
+        "ground_truth": "$ 128",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 188
+    },
+    {
+        "question": "What is the total amount of consumer and small business Card Member loans and receivables reported?",
+        "ground_truth": "The text chunk does not provide specific numeric values for consumer and small business Card Member loans and receivables.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 43
+    },
+    {
+        "question": "What is the difference in the values of Interest-bearing between the two columns in the table?",
+        "ground_truth": "$ 13,138",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 132
+    },
+    {
+        "question": "What is the percentage difference in the reported values between the Consumer and Small Business segments?",
+        "ground_truth": "1.6%",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 127
+    },
+    {
+        "question": "What is the total amount of loans due after one year at fixed interest rates across all customer types?",
+        "ground_truth": "8,980",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 192
+    },
+    {
+        "question": "What is the total amount of other comprehensive income (loss) reported in the document?",
+        "ground_truth": "The document does not provide a specific numeric value for other comprehensive income (loss).",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 107
+    },
+    {
+        "question": "What is the total number of directors listed in the document?",
+        "ground_truth": "12",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 181
+    },
+    {
+        "question": "What year did the tribunal render a partial award that included a direction for an audit?",
+        "ground_truth": "2008",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 151
+    },
+    {
+        "question": "What is the number of years reported in the table for the financial classification segment breakdown?",
+        "ground_truth": "0",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 53
+    },
+    {
+        "question": "What is the total number of countries where travel counselors are using AI tools?",
+        "ground_truth": "19",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 11
+    },
+    {
+        "question": "What is the total revenue net of interest expense for the business segments reported?",
+        "ground_truth": "The document does not provide specific numeric values for total revenues net of interest expense.",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 68
+    },
+    {
+        "question": "What is the year-over-year percentage change in total assets from December 31, 2023, to December 31, 2024?",
+        "ground_truth": "The exact percentage change is not provided in the text chunk.",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 107
+    },
+    {
+        "question": "What is the total amount reported for Fixed Rate Senior Notes and Floating Rate Senior Notes combined?",
+        "ground_truth": "2.1",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 77
+    },
+    {
+        "question": "What was the percentage increase in online and card-not-present spending in 2021?",
+        "ground_truth": "The text does not provide a specific percentage increase for online and card-not-present spending in 2021.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 5
+    },
+    {
+        "question": "What is the total sum of the values presented in the table?",
+        "ground_truth": "91,605",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 178
+    },
+    {
+        "question": "What is the total value reported in the structural table?",
+        "ground_truth": "22,480",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 142
+    },
+    {
+        "question": "What was the reported T&E spending growth rate in 2021 compared to 2019 levels?",
+        "ground_truth": "T&E spending did not rebound to 2019 levels by the end of 2021.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 97
+    },
+    {
+        "question": "What is the total number of securitization trusts mentioned in the document?",
+        "ground_truth": "2",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 138
+    },
+    {
+        "question": "What is the total number of environmental, social, and governance goals completed under the 2021\u20132024 strategy?",
+        "ground_truth": "All goals except for the continued work in support of Small Business Saturday and other Shop Small campaigns.",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 19
+    },
+    {
+        "question": "What is the total number of incentive compensation plans mentioned in the document?",
+        "ground_truth": "3",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 169
+    },
+    {
+        "question": "What is the total number of compliance metrics reported in the section marked with [START_STRUCTURAL_TABLE]?",
+        "ground_truth": "0",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 42
+    },
+    {
+        "question": "What is the reported earnings per share growth percentage for the year 2025?",
+        "ground_truth": "The document does not provide a specific earnings per share growth percentage for the year 2025.",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 101
+    },
+    {
+        "question": "What is the reported scale of the document in terms of units?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 54
+    },
+    {
+        "question": "What is the minimum leverage ratio required for banking organizations?",
+        "ground_truth": "4.0 percent",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 22
+    },
+    {
+        "question": "What is the percentage increase in Total non-interest revenues from the year with the lowest value to the year with the highest value?",
+        "ground_truth": "15.73%",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 110
+    },
+    {
+        "question": "What is the reported scale of the financial metrics in the document?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 170
+    },
+    {
+        "question": "What is the total value of financial liabilities reported in the document?",
+        "ground_truth": "The document does not provide specific numeric values for financial liabilities.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 149
+    },
+    {
+        "question": "What is the percentage change in Cash dividends declared per common share from the previous year to the current year?",
+        "ground_truth": "17 %",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 61
+    },
+    {
+        "question": "What is the sum of the values in the first and third columns of the table?",
+        "ground_truth": "2,639",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 123
+    },
+    {
+        "question": "What is the total number of credit accounts reported in TABLE 7?",
+        "ground_truth": "The exact number of credit accounts is not provided in the text chunk.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 58
+    },
+    {
+        "question": "How many total grants were awarded to Black-owned businesses and Black women entrepreneurs combined?",
+        "ground_truth": "700",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 5
+    },
+    {
+        "question": "What is the total number of loans and receivables evaluated for lifetime losses based on shared risk characteristics?",
+        "ground_truth": "The document does not provide a specific numeric value for the total number of loans and receivables evaluated.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 120
+    },
+    {
+        "question": "What is the total reported value for the 'Other' segment in the table?",
+        "ground_truth": "$ 9,019",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 187
+    },
+    {
+        "question": "What is the ratio of Interest expense to the first column value in the table?",
+        "ground_truth": "0.066",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 159
+    },
+    {
+        "question": "What is the difference in Gross deferred tax assets between the two reported periods?",
+        "ground_truth": "1,227",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 155
+    },
+    {
+        "question": "What is the total number of joint ventures mentioned in the document?",
+        "ground_truth": "3",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 43
+    },
+    {
+        "question": "What is the total amount of USD Floating Rate Senior Notes and USD Fixed-to-Floating Rate Senior Notes issued by American Express Company in 2025?",
+        "ground_truth": "$1.5 billion",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 84
+    },
+    {
+        "question": "What is the value reported for the effects of foreign currency translations in the table?",
+        "ground_truth": "10",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 153
+    },
+    {
+        "question": "What is the total number of amendments to the American Express Company Key Executive Life Insurance Plan mentioned in the document?",
+        "ground_truth": "3",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 168
+    },
+    {
+        "question": "What is the total impaired balance for Card Member Loans - Consumer for the year 2022?",
+        "ground_truth": "$2,286",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 117
+    },
+    {
+        "question": "What is the total number of years represented in the table for the financial classification?",
+        "ground_truth": "2",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 70
+    },
+    {
+        "question": "What is the total number of unrecognized tax benefits reported in the compliance document?",
+        "ground_truth": "The document does not provide a specific numeric value for unrecognized tax benefits.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 93
+    },
+    {
+        "question": "What is the difference between the highest and lowest weighted-average fair value per option reported in the table?",
+        "ground_truth": "309.00",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 134
+    },
+    {
+        "question": "What is the total value of Cash and cash equivalents and Other financial assets reported in the table?",
+        "ground_truth": "$ 79",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 149
+    },
+    {
+        "question": "What is the total number of cases mentioned in the document?",
+        "ground_truth": "2",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 146
+    },
+    {
+        "question": "What year did the Basel Committee publish standards that revised the standardized approach for credit risk?",
+        "ground_truth": "2017",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 31
+    },
+    {
+        "question": "What is the difference between the total revenues net of interest expense for the two segments represented in the table?",
+        "ground_truth": "431",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 161
+    },
+    {
+        "question": "What is the percentage increase in Average proprietary basic Card Member spending from the previous year to the current year?",
+        "ground_truth": "10",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 70
+    },
+    {
+        "question": "What is the total number of compliance issues reported in the year 2022 as per the compliance report?",
+        "ground_truth": "The document does not provide specific numerical data regarding compliance issues reported in 2022.",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 32
+    },
+    {
+        "question": "What is the total number of reported compliance issues across all categories in the structural table?",
+        "ground_truth": "There is no structural table present in the provided text chunk.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 36
+    },
+    {
+        "question": "What is the difference in cash and cash equivalents between the years 2021 and 2020?",
+        "ground_truth": "$5,627 million",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 161
+    },
+    {
+        "question": "What is the total sum of the values in the second column of the table?",
+        "ground_truth": "546",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 180
+    },
+    {
+        "question": "What was the difference in Corporate & Other pretax loss between 2023 and 2022?",
+        "ground_truth": "$200 million",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 72
+    },
+    {
+        "question": "What is the total number of financial statements reported in the table?",
+        "ground_truth": "1",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 166
+    },
+    {
+        "question": "What percentage of worldwide network volumes did all cobrand portfolios account for in the year ended December 31, 2021?",
+        "ground_truth": "19 percent",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 33
+    },
+    {
+        "question": "What is the total value of 'Other intangible assets, at amortized cost' and 'Other' combined?",
+        "ground_truth": "115,440",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 126
+    },
+    {
+        "question": "What is the reported scale of the values in the document?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 44
+    },
+    {
+        "question": "What is the difference in net write-offs for principal less recoveries between the two segments?",
+        "ground_truth": "$ 18",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 188
+    },
+    {
+        "question": "What is the value reported for Travel commissions and fees?",
+        "ground_truth": "2244",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 150
+    },
+    {
+        "question": "What is the percentage increase in the Total loans and Card Member receivables (FX-adjusted) from the previous year to the current year?",
+        "ground_truth": "11.6%",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 58
+    },
+    {
+        "question": "What is the total number of business partnerships reported in the Membership Rewards program?",
+        "ground_truth": "The document does not provide a specific numeric value for the total number of business partnerships.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 35
+    },
+    {
+        "question": "What is the total non-interest revenues for the segment with the highest value?",
+        "ground_truth": "$ 14,178",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 163
+    },
+    {
+        "question": "What are the quantitative limitations imposed on transactions between AENB and its affiliates?",
+        "ground_truth": "The text does not provide specific quantitative limitations on transactions between AENB and its affiliates.",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 30
+    },
+    {
+        "question": "What is the total number of compliance risk assessments conducted in 2022?",
+        "ground_truth": "The document does not provide specific numerical data regarding the total number of compliance risk assessments conducted in 2022.",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 83
+    },
+    {
+        "question": "What is the difference between the values in the first and second columns of the table?",
+        "ground_truth": "24",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 101
+    },
+    {
+        "question": "What is the net value of deferred card and other fees reported?",
+        "ground_truth": "22,516",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 132
+    },
+    {
+        "question": "What is the net write-off rate for corporate receivables including principal, interest, and/or fees?",
+        "ground_truth": "The net write-off rate for corporate receivables including principal, interest, and/or fees is not provided due to system constraints.",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 58
+    },
+    {
+        "question": "What is the year referenced for the effective date of the 2016 Incentive Compensation Plan?",
+        "ground_truth": "2024",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 178
+    },
+    {
+        "question": "What is the total number of provisions mentioned in the EU payments legislation as applicable to cobrand partners and agents?",
+        "ground_truth": "The text does not specify a numeric total for the provisions mentioned.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 42
+    },
+    {
+        "question": "What is the total estimated fair value of available-for-sale debt securities with a ratio of fair value to amortized cost of less than 12 months as of December 31, 2022?",
+        "ground_truth": "The exact precise numeric or factual answer is not provided in the text chunk.",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 125
+    },
+    {
+        "question": "What is the expected duration of the current Delta cobrand agreement?",
+        "ground_truth": "The current Delta cobrand agreement runs through the end of 2029.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 13
+    },
+    {
+        "question": "What is the total amount of Fixed Rate Senior Notes and Fixed-to-Floating Rate Senior Notes reported in the table?",
+        "ground_truth": "$37,310",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 140
+    },
+    {
+        "question": "What is the sum of the values in the first column and the last column of the table?",
+        "ground_truth": "237",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 55
+    },
+    {
+        "question": "What was the total net benefit for the unfunded other postretirement benefit plans in 2021 compared to 2020?",
+        "ground_truth": "$26 million in 2021 and $8 million in 2020.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 135
+    },
+    {
+        "question": "What is the total number of compliance metrics reported in the table section?",
+        "ground_truth": "0",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 27
+    },
+    {
+        "question": "What is the minimum asset threshold for insured depository institutions to be required to submit resolution plans according to the FDIC's January 2021 announcement?",
+        "ground_truth": "$100 billion",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 25
+    },
+    {
+        "question": "What is the total amount of loans due after one year at fixed interest rates for Consumer, Small Business, and Other categories combined?",
+        "ground_truth": "$331,199 + $8,899 + $44,220 = $384,318",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 179
+    },
+    {
+        "question": "What is the total cash flow reported for the year 2023?",
+        "ground_truth": "The total cash flow reported for the year 2023 is not provided in the text chunk.",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 80
+    },
+    {
+        "question": "What is the effective date of the Twelfth Amendment and Restatement of the American Express Retirement Restoration Plan?",
+        "ground_truth": "January 1, 2023",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 171
+    },
+    {
+        "question": "What is the reported scale of the data in the document?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 12
+    },
+    {
+        "question": "What is the ratio of the first value to the salaries and employee benefits?",
+        "ground_truth": "0.0186",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 101
+    },
+    {
+        "question": "What is the ratio of the first value (4,296) to the second value (8,429) in the table?",
+        "ground_truth": "0.5105",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 101
+    },
+    {
+        "question": "What was the total shareholders' equity for American Express Company as of December 31, 2021, compared to December 31, 2020?",
+        "ground_truth": "The total shareholders' equity for December 31, 2021, was $XX billion, while for December 31, 2020, it was $YY billion.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 97
+    },
+    {
+        "question": "What is the reported scale for the values in the document?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 103
+    },
+    {
+        "question": "What was the Membership Rewards Ultimate Redemption Rate (URR) for program participants at December 31, 2022?",
+        "ground_truth": "96 percent",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 55
+    },
+    {
+        "question": "What is the value of Unamortized Underwriting Fees reported in the table?",
+        "ground_truth": "(52)",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 131
+    },
+    {
+        "question": "What is the total number of services mentioned in the document related to shareholder benefits?",
+        "ground_truth": "2",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 196
+    },
+    {
+        "question": "What is the total value for the Consumer segment across all columns in the table?",
+        "ground_truth": "4,652",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 121
+    },
+    {
+        "question": "What is the total amount of debt with subsidiaries and affiliates compared to long-term debt?",
+        "ground_truth": "Total debt with subsidiaries and affiliates is 3,908 (1136 + 2772) while long-term debt is 222,314.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 161
+    },
+    {
+        "question": "What is the total value reported in the last column of the table?",
+        "ground_truth": "2228",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 178
+    },
+    {
+        "question": "What is the total number of cards-in-force reported in the compliance metrics?",
+        "ground_truth": "The document does not provide specific numeric values for cards-in-force.",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 35
+    },
+    {
+        "question": "What is the value of Risk-Weighted Assets reported in the table?",
+        "ground_truth": "166.5",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 70
+    },
+    {
+        "question": "What is the total number of distinct risk management profiles mentioned in the document?",
+        "ground_truth": "1",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 88
+    },
+    {
+        "question": "What is the total amount of liquid assets reported in the compliance section?",
+        "ground_truth": "The document does not provide specific numeric values for liquid assets.",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 78
+    },
+    {
+        "question": "What is the value reported for Floating Rate Senior Notes?",
+        "ground_truth": "1.1",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 74
+    },
+    {
+        "question": "What is the age difference between the oldest executive, Mr. Buckminster, and the youngest executive, Ms. Herena?",
+        "ground_truth": "11",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 18
+    },
+    {
+        "question": "What is the total value reported for the years 2027 to 2030 inclusive?",
+        "ground_truth": "560",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 148
+    },
+    {
+        "question": "What is the reported increase in payments to cobrand partners in the United States?",
+        "ground_truth": "The text does not provide a specific numeric value for the increase in payments to cobrand partners.",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 39
+    },
+    {
+        "question": "What is the total reported value for the year 2020 across all segments?",
+        "ground_truth": "Data not provided in the table.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 158
+    },
+    {
+        "question": "What is the par value of the Common Shares registered pursuant to Section 12(b) of the Act?",
+        "ground_truth": "$0.20",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 7
+    },
+    {
+        "question": "What is the difference between the two values in the table?",
+        "ground_truth": "279",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 151
+    },
+    {
+        "question": "What is the percentage increase in Basic Earnings per Common Share from 2022 to 2024?",
+        "ground_truth": "42.14%",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 111
+    },
+    {
+        "question": "What is the total amount of fees recognized in the period when they are applied to a Card Member account?",
+        "ground_truth": "The document does not provide a specific numeric value for the total amount of fees recognized.",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 116
+    },
+    {
+        "question": "What is the total number of valuation techniques mentioned for financial assets and liabilities measured at fair value?",
+        "ground_truth": "1",
+        "source_file": "Amex_2024.pdf",
+        "page_number": 157
+    },
+    {
+        "question": "What was the reported Net interest yield on average Total loans and Card Member receivables for the third quarter of 2025?",
+        "ground_truth": "The document does not provide a specific numeric value for the Net interest yield on average Total loans and Card Member receivables for the third quarter of 2025.",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 60
+    },
+    {
+        "question": "What is the total number of proprietary corporate and small business cards issued by Global Commercial Services (GCS)?",
+        "ground_truth": "The document does not provide a specific numeric value for the total number of proprietary corporate and small business cards issued by GCS.",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 162
+    },
+    {
+        "question": "What is the reported scale for the quantitative goodwill impairment testing methodology?",
+        "ground_truth": "Standard Units / Absolute Raw Values",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 90
+    },
+    {
+        "question": "What is the percentage increase in Total non-interest revenues from the second to the first reported year?",
+        "ground_truth": "10.4%",
+        "source_file": "Amex_2023.pdf",
+        "page_number": 104
+    },
+    {
+        "question": "What is the total amount reported for Salaries and employee benefits?",
+        "ground_truth": "66,240",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 55
+    },
+    {
+        "question": "What is the difference in net interest income between the second and third reported values?",
+        "ground_truth": "$635",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 59
+    },
+    {
+        "question": "What is the total number of loans reported in the Consolidated Balance Sheets net of reserves for credit losses?",
+        "ground_truth": "The document does not provide a specific numeric value for the total number of loans.",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 113
+    },
+    {
+        "question": "What is the total number of compliance reports submitted in the year 2025?",
+        "ground_truth": "The document does not provide any numerical data regarding compliance reports submitted in 2025.",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 50
+    },
+    {
+        "question": "What is the proportion of allocated costs to salaries and employee benefits for the reported period?",
+        "ground_truth": "The proportion remains relatively consistent from period to period.",
+        "source_file": "Amex_2025.pdf",
+        "page_number": 68
+    },
+    {
+        "question": "What are the specific values reported for the 'Change' column for the years ended December 31?",
+        "ground_truth": "The table does not provide any specific values for the 'Change' column.",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 52
+    },
+    {
+        "question": "What is the difference in the Total current income tax expense between the reported values for the first and second columns?",
+        "ground_truth": "279",
+        "source_file": "Amex_2020.pdf",
+        "page_number": 155
+    },
+    {
+        "question": "What was the impact on the Consolidated Financial Statements for the year ended December 31, 2022, due to the failure to credit Membership Rewards points?",
+        "ground_truth": "Immaterial impact",
+        "source_file": "Amex_2022.pdf",
+        "page_number": 91
+    },
+    {
+        "question": "What is the net interest income reported in the table?",
+        "ground_truth": "1108",
+        "source_file": "Amex_2021.pdf",
+        "page_number": 68
+    }
+]

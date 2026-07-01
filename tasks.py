@@ -6,7 +6,7 @@ from agents.financial_agent import FinancialAgent
 logger = setup_custom_logger("CeleryWorker")
 
 # 📬 Connect Celery to our Redis box
-REDIS_URL = os.getenv("CELERY_BROKER_URL", "redis://redis_broker:6379/0")
+REDIS_URL = os.getenv("CELERY_BROKER_URL", "redis://localhost:6379/0")
 celery_app = Celery("financial_tasks", broker=REDIS_URL, backend=REDIS_URL)
 
 # 💼 Initialize the heavy AI Agent inside the worker memory space
