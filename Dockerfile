@@ -12,7 +12,10 @@ COPY requirements.txt .
 RUN pip3 install --no-cache-dir -r requirements.txt
 
 # 🌟 STEP 1: Copy your local database folder explicitly into the correct workspace path first
-COPY chroma_db_storage/ /financial_agent_intel/chroma_db_storage/
+#COPY chroma_db_storage/ /financial_agent_intel/chroma_db_storage/
+# 🌟 FIX: Create a fresh, clean database directory dynamically inside the cloud container
+
+RUN mkdir -p /financial_agent_intel/chroma_db_storage
 
 # 🌟 STEP 2: Now copy the rest of your files safely around it
 COPY . .
