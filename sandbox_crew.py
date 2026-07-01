@@ -1,7 +1,5 @@
 import os
 from crewai import Agent, Task, Crew, Process
-# 🌟 FIX 1: Import the native Tool wrapper from crewai instead of crewai.tools
-#from crewai.tools import tool
 
 # Import the clean tools directly from our tools backend
 from sandbox_tools import (
@@ -11,7 +9,8 @@ from sandbox_tools import (
     get_live_exchange_rate
 )
 
-# Set the global model environment variable CrewAI uses natively under the hood
+# 🌟 THE ABSOLUTE FIX: CrewAI will use this environment variable to auto-instantiate 
+# the correct internal model object type, bypassing all version/attribute conflicts.
 os.environ["OPENAI_MODEL_NAME"] = "gpt-4o-mini"
 
 # ──── STEP 1: DEFINE THE SPECIALIZED WORKERS ────
@@ -24,10 +23,8 @@ researcher = Agent(
         "you must use that exact number. You are strictly forbidden from altering values, applying "
         "historical baseline guesses (like 83.5), or rounding numbers before handing them to the next task."
     ),
-    # 🌟 FIX 2: Pass the functions directly. Modern CrewAI automatically processes 
-    # LangChain-decorated functions if they are well-structured!
     tools=[query_internal_amex_vault, query_external_competitor_web, get_live_exchange_rate],
-    llm="openai/gpt-4o-mini", 
+    # 🌟 REMOVED llm string parameter to let the framework auto-initialize via env variables safely
     verbose=True
 )
 
@@ -40,7 +37,7 @@ calculator = Agent(
         "into absolute digits (e.g., writing out all the zeros) before running calculations to prevent scale errors."
     ),
     tools=[execute_financial_calculation],
-    llm="openai/gpt-4o-mini", 
+    # 🌟 REMOVED llm string parameter to let the framework auto-initialize via env variables safely
     verbose=True
 )
 
