@@ -8,7 +8,7 @@ on:
 env:
   AWS_REGION: us-east-1
   ECR_REPOSITORY: amex-financial-agent
-  ECS_SERVICE: amex-financial-agent-service  
+  ECS_SERVICE: amex-financial-agent-task-service-dcpveo8l
   ECS_CLUSTER: amex-agent-prod
   ECS_TASK_DEFINITION: amex-financial-agent-task
   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
