@@ -11,6 +11,8 @@ env:
   ECS_SERVICE: amex-financial-agent-service  
   ECS_CLUSTER: amex-agent-prod
   ECS_TASK_DEFINITION: amex-financial-agent-task
+  OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+  TAVILY_API_KEY: ${{ secrets.TAVILY_API_KEY }}
 
 jobs:
   deploy:
