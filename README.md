@@ -45,21 +45,25 @@ Semantic Chunking: Utilizing sentence embedding distances to place chunk divider
 
 GraphRAG: Injecting a Knowledge Graph framework to cross-link continuous themes and multi-year narrative metrics implicitly.
 
-🛠️ Local Installation & Setup
-Clone the Repository:
+## 🛠️ Local Installation & Setup
 
-Bash
-git clone https://github.com/sbehu/financial_agent_intel.git
+### 1. Clone the Repository
+```bash
+git clone [https://github.com/sbehu/financial_agent_intel.git](https://github.com/sbehu/financial_agent_intel.git)
 cd financial_agent_intel
-Configure Environment Variables:
-Create a .env file in the root directory:
 
-Code snippet
+
+Configure Environment Variables:
+
+Create a .env file in the root directory:
 OPENAI_API_KEY=your_openai_api_key_here
 CREWAI_LOGGING_LEVEL=INFO
+
+
 Docker Multi-Container Deployment:
 
-Bash
 docker build -t financial-agent-app .
 docker run -p 8501:8501 financial-agent-app
+
+
 Open http://localhost:8501 in your browser to interact with the Streamlit engine.

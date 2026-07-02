@@ -7,7 +7,8 @@ from openai import OpenAI
 import chromadb
 from tavily import TavilyClient
 # 🌟 BYPASS BROKEN CREWAI IMPORTS NATIVELY VIA LANGCHAIN CORE
-from langchain_core.tools import tool
+#from langchain_core.tools import tool
+from crewai.tools import tool
 
 # Load environment configurations
 load_dotenv()
